@@ -90,6 +90,9 @@ class ClevrDataset(Dataset):
     if program_seq is not None:
       program_json_seq = []
       for fn_idx in program_seq:
+# JAMBSDORF 11.06.2020: Fix/Hack for torch 1.xx 
+        fn_idx = fn_idx.item()
+# END
         fn_str = self.vocab['program_idx_to_token'][fn_idx]
         if fn_str == '<START>' or fn_str == '<END>': continue
         fn = vr.programs.str_to_function(fn_str)
