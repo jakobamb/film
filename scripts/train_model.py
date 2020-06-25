@@ -32,6 +32,10 @@ from vr.models import ModuleNet, Seq2Seq, LstmModel, CnnLstmModel, CnnLstmSaMode
 from vr.models import FiLMedNet
 from vr.models import FiLMGen
 
+# tensorboard
+from torch.utils.tensorboard import SummaryWriter
+writer = SummaryWriter()
+
 parser = argparse.ArgumentParser()
 
 # Input data
@@ -143,7 +147,6 @@ parser.add_argument('--avoid_checkpoint_override', default=0, type=int)
 parser.add_argument('--record_loss_every', default=1, type=int)
 parser.add_argument('--checkpoint_every', default=10000, type=int)
 parser.add_argument('--time', default=0, type=int)
-
 
 def main(args):
   if args.randomize_checkpoint_path == 1:
