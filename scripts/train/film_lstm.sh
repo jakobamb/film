@@ -2,14 +2,14 @@
 
 export CUDA_VISIBLE_DEVICES=3
 
-checkpoint_path="data/film.pt"
-log_path="data/film.log"
+checkpoint_path="data/film_lstm.pt"
+log_path="data/film_lstm.log"
 python scripts/train_model.py \
   --checkpoint_path $checkpoint_path \
   --model_type FiLM \
-  --num_iterations 1000 \
-  --print_verbose_every 10 \
-  --checkpoint_every 1100 \
+  --num_iterations 20000000 \
+  --print_verbose_every 20000000 \
+  --checkpoint_every 11000 \
   --record_loss_every 100 \
   --num_val_samples 149991 \
   --optimizer Adam \
